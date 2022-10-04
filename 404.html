@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"href="https://cybercoderx.codes/utility/bootstrap-5.0.2-dist/css/bootstrap.css">
+<link rel="stylesheet"href="https://cybercoderx.codes/utility/fontawesome-free-6.1.1-web/css/all.css"crossorigin="anonymous">
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script> <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+<title>Error Page Not Found - Cyber Coder X</title>
+<style>
+*
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-weight: bold;
+}
+html, body
+{
+height: 100%;
+}
+body
+{
+background: rgba(0, 0, 0, 0.6) url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo69QfvBaQmtE4ke4LIDRUuOlBxu94PS6AFw&usqp=CAU) no-repeat;
+background-size: cover;
+background-blend-mode: darken;
+background-position: center;
+background-attachment: fixed;
+justify-content: space-evenly;
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+display: grid;
+text-align: center;
+align-items: center;
+place-items: center;
+justify-content: center;
+color: white;
+font-weight: bold;
+}
+p, h2, h1
+{
+margin: auto;
+font-weight: bold;
+text-transform: uppercase;
+}
+div.loader
+{
+font-weight: bold;
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+height: 100vh;
+width: 100%;
+z-index: 5;
+background: black;
+justify-content: space-evenly;
+text-align: center;
+align-items: center;
+font-weight: bold;
+display: block;
+}
+div.loader p
+{
+text-transform: capitalize;
+}
+div.loader .d
+{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 100%;
+justify-content: space-evenly;
+text-align: center;
+align-items: center;
+font-weight: bold;
+display: block;
+}
+div.container.content
+{
+max-width: 350px;
+border: 2px solid white;
+padding: 2px;
+box-sizing: border-box;
+border-radius: 10px;
+text-align: center;
+align-items: center;
+place-items: center;
+justify-content: space-evenly;
+}
+.emoji
+{
+font-size: 50px;
+}
+.emoji::before
+{
+content: "\01F9D0";
+animation: animate-emoji 2s linear infinite;
+}
+@keyframes animate-emoji
+{
+0%
+{
+content: "\01F9D0";
+}
+100%
+{
+content: "\01F613";
+}
+}
+.animate-404
+{
+color: white;
+animation: animate 1s linear infinite;
+}
+@keyframes animate
+{
+0%
+{
+color: red;
+}
+100%
+{
+color: white;
+}
+}
+</style>
+</head>
+<body>
+<div class="container loader"id="loader">
+<div class="container-fluid d justify-content-center text-success">
+<p><i class="fa fa-spinner fa-pulse fa-fw fa-2x"id="buffer-icon"></i></p>
+<p class="load-text">loading please wait...</p>
+</div>
+</div>
+<div class="container content text-center">
+<div class="container-fluid">
+<p class="heading"><h2><span class="animate-404">404</span> page not found!</h2></p>
+<p class="emoji"></p>
+<p class="info1">the page you are looking for is not available or might have been removed!</p>
+<p><hr></p>
+<p class="info2"><span id="count">redirecting to homepage in 10s</span></p>
+</div>
+</div>
+<script src="https://cybercoderx.codes/utility/jQuery.js"></script>
+<script src="https://cybercoderx.codes/utility/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+<script src="https://cybercoderx.codes/utility/fontawesome-free-6.1.1-web/js/all.js"></script>
+<script>
+window.onload = function()
+{
+document.getElementById('loader').style.display = 'none';
+};
+</script>
+<script>
+var time= 9;
+var redirect= "/";
+var timer= setInterval(function()
+{
+if(time<=0)
+{
+clearInterval(timer);    document.getElementById("count").innerHTML = "redirecting to homepage...";
+window.location.href = redirect;
+}
+else
+{
+document.getElementById("count").innerHTML = "redirecting to homepage in " + time + "s";
+}
+time -= 1;
+}, 1000);
+</script>
+</body>
+</html>
