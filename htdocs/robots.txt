@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-Agent: FacebookBot
+Allow: /
+
+User-Agent: DMCA.com Page Protection Crawling Service
+Allow: /
+
+Sitemap: https://cybercoderx.codes/sitemap.xml

@@ -1,0 +1,16 @@
+{
+  "short_name": "CYBER CODER X",
+  "name": "CYBER CODER X",
+  "icons": [
+    {
+      "src": "./assets/images/icon.png",
+      "sizes": "720x720",
+      "type": "image/png",
+    }
+  ],
+  "start_url": "/",
+  "theme_color": "green",
+  "background_color": "#2296F3",
+  "orientation": "any",
+  "display": "standalone",
+}
